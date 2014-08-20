@@ -13,8 +13,11 @@ block content
         tbody
         each treasure in treasures
           tr(data-name=treasure.name, data-lat=treasure.lat, data-lng=treasure.lng)
-            td treasure.name
-            td treasure.loc
-            td treasure.difficulty 
+            td= treasure.name
+            td= treasure.loc
+            td= treasure.difficulty 
             td 
+
+
 block scripts
+          script(src='/js/user/index.js')
