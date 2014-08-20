@@ -5,6 +5,7 @@ var Mongo = require('mongodb');
 
 function Treasure(t){
   this.name       = t.name;
+  this.loc        = t.loc;
   this.lat        = parseFloat(t.lat);
   this.lng        = parseFloat(t.lng);
   this.photo      = [];
