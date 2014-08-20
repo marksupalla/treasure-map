@@ -1,0 +1,35 @@
+extends ../shared/template
+block content
+  h2 New Treasure Map
+  .row
+    .col-xs-6
+      form
+        .form-group
+          label(for='name') Map Name
+          input.form-control#name(type='text', name='name', autofocus=true,)
+        .form-group
+          label(for='location') Location
+          input.form-control#location(type='text', name='location')
+        .form-group
+          label(for='hint') Hint
+          textarea.form-control#hint(type='text', name='hint')
+    .col-xs-6
+      form
+        .form-group
+          label(for='photo') Add Photo
+          input.form-control#photo(type='file', name='photo')
+        .btn-group
+          label(for='difficulty') Difficulty Level
+          button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li
+                a(href='#') Easy
+              li
+                a(href='#') Medium
+              li
+                a(href='#') Hard
+              li.divider
+              li
+                a(href='#') Separated link
+block scripts
