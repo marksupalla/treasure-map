@@ -1,0 +1,29 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Gold",
+  "lat":25,
+  "lng":12,
+  "photo":"http://images.com/gold.jpg",
+  "difficulty":"hard",
+  "hint":"go to the right"
+}
+
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"Silver",
+  "lat":30,
+  "lng":30,
+  "photo":"http://images.com/silver.jpg",
+  "difficulty":"medium",
+  "hint":"go to the left"
+}
+
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"Bronze",
+  "lat":1,
+  "lng":25,
+  "photo":"http://images.com/bronze.jpg",
+  "difficulty":"easy",
+  "hint":"go up"
+}
