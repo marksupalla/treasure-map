@@ -1,7 +1,7 @@
 'use strict';
 
 var Mongo = require('mongodb'),
-    //   _     = require('lodash'),
+    _     = require('lodash'),
     fs    = require('fs'),
     path  = require('path');
 
@@ -33,20 +33,17 @@ Treasure.create = function(o, cb){
 Treasure.findById = function(id, cb){
   var _id = Mongo.ObjectID(id);
   Treasure.collection.findOne({_id:_id}, function(err, obj){
-    var treasure = obj;
+    var treasure = changePrototype(obj);
     cb(treasure);
   });
 };
 
 Treasure.prototype.save = function(cb){
-  var treasure = this;
-  Treasure.collection.save(this, function(){
-    cb(treasure);
-  });
+  Treasure.collection.save(this, cb);
 };
 
-Treasure.prototype.toggleFound = function(){
-  this.found = !this.found;
+Treasure.prototype.toggle = function(){
+  this.found = true;
 };
 
 Treasure.prototype.uploadPhotos = function(files, cb){
@@ -67,11 +64,11 @@ Treasure.prototype.uploadPhotos = function(files, cb){
   this.save(cb);
 };
 
-/* Private Function
+// Private Function //
 
 function changePrototype(obj){
   var treasure = _.create(Treasure.prototype, obj);
   return treasure;
 }
-*/
+
 module.exports = Treasure;

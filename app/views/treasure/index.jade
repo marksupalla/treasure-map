@@ -1,9 +1,8 @@
 extends ../shared/template
 block content
+  h2 Treasure Maps:
   .row
-    .col-xs-12
-      #map
-    .col-xs-12
+    .col-xs-5
       table.blue(class='table table-striped')
         thead
           th Name
@@ -17,7 +16,8 @@ block content
             td= treasure.loc
             td= treasure.difficulty
             td= treasure.found
-
+    .col-xs-7
+      #map
 
 block scripts
           script(src='/js/user/index.js')

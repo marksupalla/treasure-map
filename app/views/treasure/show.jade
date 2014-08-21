@@ -4,15 +4,15 @@ block content
     .col-xs-6
       #map
     .col-xs-6
-      .row
-        .col-xs-12
-          #treasure(data-name=treasure.loc, data-lat=treasure.lat, data-lng=treasure.lng)
+      #treasure(data-name=treasure.loc, data-lat=treasure.lat, data-lng=treasure.lng)
   .row
-    .col-xs-6
-      .hint= treasure.hint
-
-    button.btn.btn-warning FOUND
-    .col-xs-6
+    .col-xs-12
+      .hint.bg-info= treasure.hint
+    .col-xs-12
+      img.img-thumbnail(src=treasure.photo)
+    .col-xs-12
+    form(method='post', action='/treasure/#{treasure._id}/found') 
+      button#found.btn.btn-warning FOUND
 
 
 block scripts

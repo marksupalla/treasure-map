@@ -9,7 +9,6 @@
   });
 
   function addMap(e){
-    debugger;
     var lat = $('#lat').val();
     if(!lat){
       var loc = $('#loc').val();

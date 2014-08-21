@@ -25,5 +25,12 @@ exports.show = function(req, res){
     res.render('treasure/show',{treasure:treasure});
   });
 };
-
+exports.found = function(req, res){
+  Treasure.findById(req.params.id, function(treasure){
+    treasure.toggle();
+    treasure.save(function(){
+      res.redirect('/treasure');
+    });
+  });
+};
 
