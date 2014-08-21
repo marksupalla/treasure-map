@@ -9,9 +9,10 @@
   });
 
   function addMap(e){
+    debugger;
     var lat = $('#lat').val();
     if(!lat){
-      var loc = $('#location').val();
+      var loc = $('#loc').val();
       geocode(loc);
       e.preventDefault();
     }
@@ -22,7 +23,7 @@
       var  loc = results[0].formatted_address,
            lat = results[0].geometry.location.lat(),
            lng = results[0].geometry.location.lng();
-      $('#location').val(loc);
+      $('#loc').val(loc);
       $('#lat').val(lat);
       $('#lng').val(lng);
       $('form').submit();

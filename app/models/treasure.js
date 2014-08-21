@@ -1,7 +1,7 @@
 'use strict';
 
 var Mongo = require('mongodb'),
-    _     = require('lodash'),
+    //   _     = require('lodash'),
     fs    = require('fs'),
     path  = require('path');
 
@@ -67,10 +67,11 @@ Treasure.prototype.uploadPhotos = function(files, cb){
   this.save(cb);
 };
 
-// Private Function //
+/* Private Function
 
 function changePrototype(obj){
   var treasure = _.create(Treasure.prototype, obj);
   return treasure;
 }
+*/
 module.exports = Treasure;
