@@ -16,4 +16,8 @@ exports.index = function(req, res){
     res.render('treasure/index', {treasures:treasures});
   });
 };
-
+exports.show = function(req, res){
+  Treasure.findById(req.params.id, function(treasure){
+    res.render('treasures/show',{treasure:treasure});
+  });
+};

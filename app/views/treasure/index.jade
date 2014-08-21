@@ -13,10 +13,10 @@ block content
         tbody
         each treasure in treasures
           tr(data-name=treasure.name, data-lat=treasure.lat, data-lng=treasure.lng)
-            td= treasure.name
+            td: a(href='treasure/' + treasure._id)= treasure.name
             td= treasure.loc
             td= treasure.difficulty 
-            td 
+            td= treasure.found 
 
 
 block scripts
